@@ -17,4 +17,9 @@ Refer to the lab handout for instructions.
 
 ## Screenshots
 
+### Code Coverage:
+
 ![image](code_coverage_screenshot.png)
+
+### Branch Coverage:
+![image](branch_coverage_screenshot.png)
