@@ -14,3 +14,7 @@ A small Python module that works out late return fines by member type, checks wh
 | `test_library_fines.py` | Starter test file |
 
 Refer to the lab handout for instructions.
+
+## Screenshots
+
+![image](code_coverage_screenshot.png)
