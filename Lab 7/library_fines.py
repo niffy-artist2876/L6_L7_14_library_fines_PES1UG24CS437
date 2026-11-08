@@ -1,17 +1,34 @@
 def parse_member_id(member_id):
-    member_type, number = member_id.split('-')
+    if not isinstance(member_id, str):
+        return None
+    parts = member_id.split('-')
+    if len(parts) != 2:
+        return None
+    member_type, number = parts[0].strip(), parts[1].strip()
+    if not member_type or not number.isascii() or not number.isdigit():
+        return None
     return member_type.upper(), int(number)
 
 def total_fine(days_csv):
-    days = [int(d) for d in days_csv.split(',')]
+    if not isinstance(days_csv, str):
+        return 0
     fine = 0
-    for d in days:
+    for part in days_csv.split(','):
+        part = part.strip()
+        if not part.isascii() or not part.lstrip('-').isdigit():
+            continue
+        d = int(part)
         if d > 14:
             fine += (d - 14) * 2
     return fine
 
+
 def shelf_code(title):
+    if not isinstance(title, str):
+        return ""
     words = title.split()
+    if len(words) < 2:
+        return ""
     return (words[0][0] + words[1][0]).upper()
 
 def main():
